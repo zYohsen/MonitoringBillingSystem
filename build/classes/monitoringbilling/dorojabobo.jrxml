@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7f7842e1-880a-4994-8386-0e00a812da06">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="monitoring" uuid="6f64f580-ef7b-4a75-bcd2-971e46d6b2c1">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     shipments.`Con_No` AS shipments_Con_No,
+     shipments.`Consignee_FirstName` AS shipments_Consignee_FirstName,
+     shipments.`Consignee_MiddleName` AS shipments_Consignee_MiddleName,
+     shipments.`Consignee_LastName` AS shipments_Consignee_LastName,
+     shipments.`Consignee_Address` AS shipments_Consignee_Address,
+     shipments.`Consignee_Mobile_No` AS shipments_Consignee_Mobile_No,
+     shipments.`Container_Type` AS shipments_Container_Type,
+     shipments.`Deposit_Costs` AS shipments_Deposit_Costs,
+     shipments.`Shipping_Line_Name` AS shipments_Shipping_Line_Name,
+     shipments.`Shipping_Line_Address` AS shipments_Shipping_Line_Address,
+     shipments.`Shipping_Line_Contact_No` AS shipments_Shipping_Line_Contact_No,
+     shipments.`Date_of_Deposit` AS shipments_Date_of_Deposit,
+     shipments.`Date_of_Refund` AS shipments_Date_of_Refund
+FROM
+     `shipments` shipments]]>
+		</queryString>
+		<field name="shipments_Con_No" class="java.lang.String"/>
+		<field name="shipments_Consignee_FirstName" class="java.lang.String"/>
+		<field name="shipments_Consignee_MiddleName" class="java.lang.String"/>
+		<field name="shipments_Consignee_LastName" class="java.lang.String"/>
+		<field name="shipments_Consignee_Address" class="java.lang.String"/>
+		<field name="shipments_Consignee_Mobile_No" class="java.lang.Long"/>
+		<field name="shipments_Container_Type" class="java.lang.String"/>
+		<field name="shipments_Deposit_Costs" class="java.lang.Integer"/>
+		<field name="shipments_Shipping_Line_Name" class="java.lang.String"/>
+		<field name="shipments_Shipping_Line_Address" class="java.lang.String"/>
+		<field name="shipments_Shipping_Line_Contact_No" class="java.lang.Long"/>
+		<field name="shipments_Date_of_Deposit" class="java.lang.String"/>
+		<field name="shipments_Date_of_Refund" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SElect * From shipments]]>
+	</queryString>
+	<field name="Con_No" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Consignee_FirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Consignee_MiddleName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Consignee_LastName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Consignee_Address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Consignee_Mobile_No" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Container_Type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Deposit_Costs" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Shipping_Line_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Shipping_Line_Address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Shipping_Line_Contact_No" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Date_of_Deposit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Date_of_Refund" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="14" y="24" width="771" height="88" uuid="7c337b6d-0a19-4552-8816-2d873da52546"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="monitoring" uuid="455f403e-4ac1-4ff4-91f6-2e92f2bbdbda">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="3c215cf9-73a0-4068-a636-3de0c8902191">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e6b57a06-6597-4cc8-bbc3-f179451f852f"/>
+								<text><![CDATA[shipments_Con_No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="f85265df-023c-4e35-8762-728bcc41f13a"/>
+								<textFieldExpression><![CDATA[$F{shipments_Con_No}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="3a482d35-8c52-4c5c-a071-f635645c56e4">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="3548d047-8497-4774-993e-a19497026add"/>
+								<text><![CDATA[shipments_Consignee_FirstName]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="93c22d5f-9ec1-4c68-9d55-8abca83fbb3f"/>
+								<textFieldExpression><![CDATA[$F{shipments_Consignee_FirstName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="6f3812ea-bdcc-445b-8350-4abbd4f105ea">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="b831a160-77b3-46c6-85e1-26d9542f5d99"/>
+								<text><![CDATA[shipments_Consignee_MiddleName]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="d5f71cd3-9d3c-46de-a6f8-a8777bdad7e1"/>
+								<textFieldExpression><![CDATA[$F{shipments_Consignee_MiddleName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="4e0b92af-81ea-418e-882a-a399fb92c0cd">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="025fedef-7977-4cd6-8d2d-f0588e177a1f"/>
+								<text><![CDATA[shipments_Consignee_LastName]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="ac56d3e7-a214-40c2-942d-329eb2acf34b"/>
+								<textFieldExpression><![CDATA[$F{shipments_Consignee_LastName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="5a25bccc-23af-41e5-a557-28843a450c7c">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="d1e4ec11-b16a-453d-86bf-890a34078d26"/>
+								<text><![CDATA[shipments_Consignee_Address]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="52b90753-4c92-4f30-83b0-5e1b1e4b647f"/>
+								<textFieldExpression><![CDATA[$F{shipments_Consignee_Address}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="940a31dd-dd74-44a5-adad-157fc46c874f">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="b8b4527d-1b06-458c-a8df-39552da61be9"/>
+								<text><![CDATA[shipments_Consignee_Mobile_No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="2030b56b-9a30-416e-a694-2980b9733eca"/>
+								<textFieldExpression><![CDATA[$F{shipments_Consignee_Mobile_No}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="1397411f-2073-45c1-8f5f-215405a6a465">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="192fb76f-4498-4605-a863-b43a01ed3148"/>
+								<text><![CDATA[shipments_Container_Type]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="6dafdee7-9020-4ac1-b38c-68a4c20f5dd5"/>
+								<textFieldExpression><![CDATA[$F{shipments_Container_Type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="5c9a74e8-f6f4-4bae-b721-9dbda85ea7df">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="b6674dfe-5106-4116-98f6-3d64e9916094"/>
+								<text><![CDATA[shipments_Deposit_Costs]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="2067fc74-8d8a-4f18-a965-db7411539bd9"/>
+								<textFieldExpression><![CDATA[$F{shipments_Deposit_Costs}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="b137414b-0c2c-4820-bb2a-54c96b0896a6">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="300d5033-1269-4141-b95c-5aa7f15eb55f"/>
+								<text><![CDATA[shipments_Shipping_Line_Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8298fa47-af12-41f3-a05c-b2bc0049a118"/>
+								<textFieldExpression><![CDATA[$F{shipments_Shipping_Line_Name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="fb844f2d-00e5-4fcd-8865-186b2b08111c">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6f9859ff-f788-4a9c-9785-4c6392dbbab5"/>
+								<text><![CDATA[shipments_Shipping_Line_Address]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="abeff29a-4026-4162-ac42-6822786433b0"/>
+								<textFieldExpression><![CDATA[$F{shipments_Shipping_Line_Address}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="a5b7a071-4a9b-4ba8-b4ab-516d8c5e9675">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="af558a49-201a-49f5-95cd-ffe3a73d64c6"/>
+								<text><![CDATA[shipments_Shipping_Line_Contact_No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c988ee60-fa05-499e-9247-290a37c63c84"/>
+								<textFieldExpression><![CDATA[$F{shipments_Shipping_Line_Contact_No}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="4dc87e5b-23e4-4dd1-a9d2-7c471bfe0052">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="251af8ea-7871-4a23-a8f5-da2f60e31802"/>
+								<text><![CDATA[shipments_Date_of_Deposit]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="6c72a974-91c3-402d-aed8-6d6baadcf3bb"/>
+								<textFieldExpression><![CDATA[$F{shipments_Date_of_Deposit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="751ef28f-1bf0-417b-87c7-5de481509690">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="f31b6447-6f1c-4610-81b8-3c94c9dee11f"/>
+								<text><![CDATA[shipments_Date_of_Refund]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="38f9f28e-a9b9-4973-be5c-6e241f32be1f"/>
+								<textFieldExpression><![CDATA[$F{shipments_Date_of_Refund}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
